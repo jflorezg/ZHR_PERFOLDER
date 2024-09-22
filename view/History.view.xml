@@ -1,0 +1,30 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="com.lh.zhr_paymentstb.controller.History" xmlns:html="http://www.w3.org/1999/xhtml">
+<Page showHeader="true" title="Vacaciones Planificadas" showFooter="true" showNavButton="true" navButtonPress="onNavBack">
+        <content>
+            <List id="vacationsList"  mode="SingleSelectMaster" width="100%" headerText=" " footerText="" backgroundDesign="Solid" showSeparators="All" growing="false" growingThreshold="20" growingScrollToLoad="true" visible="true" >
+                <infoToolbar>
+                    <Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+                        <content>
+                            <Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                        </content>
+                    </Toolbar>
+                </infoToolbar>
+                <headerToolbar>
+                    <Toolbar enabled="true" visible="true" width="" design="Solid">
+                        <content>
+                            <SearchField placeholder="Buscar" showSearchButton="true" visible="false" width="100%" liveChange="_onSearchFieldLiveChange"/>
+                        </content>
+                    </Toolbar>
+                </headerToolbar>
+                <items>
+                  
+                </items>
+            </List>
+        </content>
+        <footer/>
+        <headerContent/>
+        <subHeader/>
+        <customHeader/>
+    </Page>
+</mvc:View>

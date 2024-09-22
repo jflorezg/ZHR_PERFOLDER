@@ -1,0 +1,53 @@
+<edmx:Edmx
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZHCM_HUMAND_SRV" xml:lang="es" sap:schema-version="1">
+            <EntityType Name="Paystub_list" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Pernr"/>
+                    <PropertyRef Name="Fpper"/>
+                    <PropertyRef Name="Fpbeg"/>
+                </Key>
+                <Property Name="Pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Nº personal" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Fpper" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Período para" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Fpbeg" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Fe.inic.perío.p." sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Fpend" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Fe.fin.Per.para" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Paydt" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Fecha pago" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+            </EntityType>
+            <EntityType Name="Paystub_seqnr" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Pernr"/>
+                    <PropertyRef Name="Fpper"/>
+                    <PropertyRef Name="Seqnr"/>
+                </Key>
+                <Property Name="Pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Nº personal" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Fpper" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Año y Periodo de Nómina" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Seqnr" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Nº de secuencia" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="PayDate" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Fecha pago" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="PayDesc" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Den.motiv.esp." sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+            </EntityType>
+            <EntityType Name="Paystub_file" m:HasStream="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Pernr"/>
+                    <PropertyRef Name="Fpper"/>
+                    <PropertyRef Name="Seqnr"/>
+                </Key>
+                <Property Name="Pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Nº personal" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Fpper" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Año y Periodo de Nómina" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Seqnr" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Nº de secuencia" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+            </EntityType>
+            <EntityContainer Name="ZHCM_HUMAND_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="Paystub_listSet" EntityType="ZHCM_HUMAND_SRV.Paystub_list" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:pageable="false" sap:requires-filter="true" sap:content-version="1"/>
+                <EntitySet Name="Paystub_seqnrSet" EntityType="ZHCM_HUMAND_SRV.Paystub_seqnr" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="Paystub_fileSet" EntityType="ZHCM_HUMAND_SRV.Paystub_file" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <atom:link
+                xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZHCM_HUMAND_SRV/$metadata"/>
+                <atom:link
+                    xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZHCM_HUMAND_SRV/$metadata"/>
+                </Schema>
+            </edmx:DataServices>
+        </edmx:Edmx>

@@ -1,0 +1,170 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "com.lh.zhr_paymentstb",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "servicecatalog.connectivityComponent",
+			"version": "0.0.0"
+		},
+		"dataSources": {
+			"ZHCM_LEAVE_REQ_SRV": {
+				"uri": "/sap/opu/odata/sap/ZHCM_LEAVE_REQ_SRV/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			},
+			"ZHCM_HUMAND_SRV": {
+				"uri": "/sap/opu/odata/sap/ZHCM_HUMAND_SRV/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/ZHCM_HUMAND_SRV/metadata.xml"
+				}
+			}
+		},
+		"_version": "1.3.0"
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "sap-icon://general-leave-request",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"_version": "1.3.0",
+		"supportedThemes": []
+	},
+	"sap.ui5": {
+		"flexEnabled": false,
+		"rootView": {
+			"viewName": "com.lh.zhr_paymentstb.view.App",
+			"type": "XML",
+			"async": false,
+			"id": "app"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30",
+			"libs": {
+				"sap.m": {},
+				"sap.ui.core": {},
+				"sap.ui.layout": {},
+				"sap.ui.unified": {
+					"minVersion": ""
+				}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "com.lh.zhr_paymentstb.i18n.i18n"
+				}
+			},
+			"employeeData": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"preload": true
+			},
+			"planningData": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"preload": false,
+				"useBatch": false
+			},
+			"": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneTime",
+					"defaultCountMode": "Request",
+					"useBatch": false
+				},
+				"dataSource": "ZHCM_LEAVE_REQ_SRV",
+				"preload": true
+			},
+			"paymentModel": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneTime",
+					"defaultCountMode": "Request",
+					"useBatch": false
+				},
+				"dataSource": "ZHCM_HUMAND_SRV",
+				"preload": true
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "com.lh.zhr_paymentstb.view",
+				"controlAggregation": "pages",
+				"controlId": "app",
+				"transition": "slide",
+				"viewLevel": 1
+			},
+			"routes": [
+				{
+					"name": "TargetPrincipal",
+					"pattern": "",
+					"target": "TargetPrincipal"
+				},
+				{
+					"pattern": "History",
+					"name": "History",
+					"target": "History"
+				}
+			],
+			"targets": {
+				"TargetPrincipal": {
+					"viewPath": "com.lh.zhr_paymentstb.view",
+					"viewType": "XML",
+					"viewId": "Principal",
+					"viewName": "Principal",
+					"viewLevel": 1
+				},
+				"History": {
+					"viewPath": "com.lh.zhr_paymentstb.view",
+					"viewType": "XML",
+					"viewName": "History",
+					"viewLevel": 2
+				}
+			}
+		},
+		"_version": "1.2.0"
+	},
+	"sap.platform.abap": {
+		"uri": "/sap/bc/ui5_ui5/sap/zhr_paymentstb",
+		"_version": "1.1.0"
+	}
+}
