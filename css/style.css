@@ -2,3 +2,11 @@
 span#application-ZEmployee-approveEmp_App1-component---Principal--textEC {
     color: red;
 }
+
+.sapMTreeItemBaseLeaf {
+    display: none;
+}
+
+.customClass {
+    padding-left: 10px;
+}

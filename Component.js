@@ -1,11 +1,11 @@
 sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/Device",
-	"com/lh/zhr_paymentstb/model/models"
+	"com/lh/zhr_perfolder/model/models"
 ], function (UIComponent, Device, models) {
 	"use strict";
 
-	return UIComponent.extend("com.lh.zhr_paymentstb.Component", {
+	return UIComponent.extend("com.lh.zhr_perfolder.Component", {
 
 		metadata: {
 			manifest: "json"

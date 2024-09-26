@@ -3,7 +3,7 @@ sap.ui.define([
 ], function (Opa5) {
 	"use strict";
 
-	return Opa5.extend("com.lh.zhr_paymentstb.test.integration.arrangements.Startup", {
+	return Opa5.extend("com.lh.zhr_perfolder.test.integration.arrangements.Startup", {
 
 		iStartMyApp: function (oOptionsParameter) {
 			var oOptions = oOptionsParameter || {};
@@ -14,7 +14,7 @@ sap.ui.define([
 			// start the app UI component
 			this.iStartMyUIComponent({
 				componentConfig: {
-					name: "com.lh.zhr_paymentstb",
+					name: "com.lh.zhr_perfolder",
 					async: true
 				},
 				hash: oOptions.hash,

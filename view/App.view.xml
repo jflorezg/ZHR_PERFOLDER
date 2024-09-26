@@ -1,5 +1,5 @@
 <mvc:View
-		controllerName="com.lh.zhr_paymentstb.controller.App"
+		controllerName="com.lh.zhr_perfolder.controller.App"
 		xmlns="sap.m"
 		xmlns:mvc="sap.ui.core.mvc"
 		displayBlock="true">

@@ -25,7 +25,7 @@ sap.ui.define([
 		});
 		sap.ui.getCore().setModel(oModelGlobal);
 	});
-	return Controller.extend("com.lh.zhr_paymentstb.controller.BaseController", {
+	return Controller.extend("com.lh.zhr_perfolder.controller.BaseController", {
 
 		/**
 		 * Convenience method for accessing the router.

@@ -7,7 +7,7 @@ sap.ui.define([
 
 	Opa5.extendConfig({
 		arrangements: new Startup(),
-		viewNamespace: "com.lh.zhr_paymentstb.view.",
+		viewNamespace: "com.lh.zhr_perfolder.view.",
 		autoWait: true
 	});
 });

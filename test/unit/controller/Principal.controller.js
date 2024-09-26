@@ -1,7 +1,7 @@
 /*global QUnit*/
 
 sap.ui.define([
-	"com/lh/zhr_paymentstb/controller/Principal.controller"
+	"com/lh/zhr_perfolder/controller/Principal.controller"
 ], function (Controller) {
 	"use strict";
 
